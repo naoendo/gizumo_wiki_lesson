@@ -103,7 +103,7 @@ npm run publish
 
 ## 技術的なもの
 
-- Node.js (v10.15.0): <a href="https://nodejs.org/ja/" target="_blank">https://nodejs.org/ja/</a>
+- Node.js (v14.18.1): <a href="https://nodejs.org/ja/" target="_blank">https://nodejs.org/ja/</a>
 - Babel (v7.x): <a href="https://babeljs.io/" target="_blank">https://babeljs.io/</a>
 - ESlint: <a href="https://eslint.org/" target="_blank">https://eslint.org/</a>
 - webpack (v4.29.0): <a href="https://webpack.js.org" target="_blank">https://webpack.js.org</a>
