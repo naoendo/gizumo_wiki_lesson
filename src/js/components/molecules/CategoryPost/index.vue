@@ -1,33 +1,35 @@
 <template lang="html">
-  <form @submit.prevent="addCategory">
-    <app-heading :level="1">カテゴリー管理</app-heading>
-    <app-input
-      v-validate="'required'"
-      name="category"
-      type="text"
-      placeholder="追加するカテゴリー名を入力してください"
-      data-vv-as="カテゴリー名"
-      :error-messages="errors.collect('category')"
-      :value="category"
-      @updateValue="$emit('udpateValue', $event)"
-    />
-    <app-button
-      class="category-management-post__submit"
-      button-type="submit"
-      round
-      :disabled="disabled || !access.create"
-    >
-      {{ buttonText }}
-    </app-button>
+  <div class="category-post">
+    <form @submit.prevent="addCategory">
+      <app-heading :level="1">カテゴリー管理</app-heading>
+      <app-input
+        v-validate="'required'"
+        name="category"
+        type="text"
+        placeholder="追加するカテゴリー名を入力してください"
+        data-vv-as="カテゴリー名"
+        :error-messages="errors.collect('category')"
+        :value="category"
+        @updateValue="$emit('udpateValue', $event)"
+      />
+      <app-button
+        class="category-management-post__submit"
+        button-type="submit"
+        round
+        :disabled="disabled || !access.create"
+      >
+        {{ buttonText }}
+      </app-button>
 
-    <div v-if="errorMessage" class="category-management-post__notice">
-      <app-text bg-error>{{ errorMessage }}</app-text>
-    </div>
+      <div v-if="errorMessage" class="category-management-post__notice">
+        <app-text bg-error>{{ errorMessage }}</app-text>
+      </div>
 
-    <div v-if="doneMessage" class="category-management-post__notice">
-      <app-text bg-success>{{ doneMessage }}</app-text>
-    </div>
-  </form>
+      <div v-if="doneMessage" class="category-management-post__notice">
+        <app-text bg-success>{{ doneMessage }}</app-text>
+      </div>
+    </form>
+  </div>
 </template>
 <script>
 import {
@@ -81,6 +83,11 @@ export default {
 };
 </script>
 <style lang="postcss" scoped>
+  .category-post {
+    float: left;
+    width: 40%;
+    padding-right: 30px;
+  }
 .category-management-post {
   &__input {
     margin-top: 16px;
