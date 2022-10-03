@@ -7,6 +7,10 @@ import Signout from '@Pages/Signout';
 import NotFound from '@Pages/NotFound';
 import Home from '@Pages/Home';
 
+// カテゴリー
+import Categories from '@Pages/Categories';
+import CategoryList from '@Pages/Categories/List';
+
 // 記事
 import Articles from '@Pages/Articles';
 import ArticleList from '@Pages/Articles/List';
@@ -28,6 +32,7 @@ import PasswordInit from '@Pages/Password/init';
 import PasswordUpdate from '@Pages/Password/update';
 
 import Store from '../_store';
+// import { categories } from '../_store/modules';
 
 Vue.use(VueRouter);
 const router = new VueRouter({
@@ -66,6 +71,17 @@ const router = new VueRouter({
       name: 'profile',
       path: '/profile',
       component: Profile,
+    },
+    {
+      path: '/categories',
+      component: Categories,
+      children: [
+        {
+          name: 'categoryList',
+          path: '',
+          component: CategoryList,
+        },
+      ],
     },
     {
       path: '/articles',
